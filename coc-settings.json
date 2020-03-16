@@ -1,0 +1,24 @@
+{
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+         "cache": {
+           "directory": ".ccls-cache"
+         } ,
+		  "clang.resourceDir": ["/usr/include", "/usr/local/include", "~/clang+llvm-8"]
+       }
+    }
+  },
+  "suggest.noselect": true,
+  "suggest.echodocSupport": true,
+  "suggest.enablePreview":true,
+  "coc.preferences.hoverTarget": "float",
+  "signature.enable":true,
+  "snippets.ultisnips.directories": [
+  	"UltiSnips",
+	"~/.vim/mysnippets"
+  ]
+}
