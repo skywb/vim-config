@@ -19,6 +19,6 @@
   "signature.enable":true,
   "snippets.ultisnips.directories": [
   	"UltiSnips",
-	"~/.vim/mysnippets"
+	"~/.vim/snippets/vim-snippet/"
   ]
 }

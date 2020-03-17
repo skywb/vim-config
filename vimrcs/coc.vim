@@ -7,7 +7,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
 let g:coc_last_hover_message= 1
-let g:UltiSnipsSnippetDirectories = [ "~/.vim/mysnippets"]
+"let g:UltiSnipsSnippetDirectories = [ "~/.vim/snippets/vim-snippet"]
 
 "跳转到定义
 nmap <silent> gd <Plug>(coc-definition)
