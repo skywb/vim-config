@@ -151,7 +151,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 "Plug 'Valloric/YouCompleteMe' 
 "Plug 'SirVer/ultisnips' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
-Plug 'honza/vim-snippets' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
+"Plug 'honza/vim-snippets' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 Plug 'Shougo/echodoc.vim'
 Plug 'majutsushi/tagbar'

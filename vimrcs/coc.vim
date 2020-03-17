@@ -1,7 +1,8 @@
 set hidden
 "语法检查等待时间
-set updatetime=300
+set updatetime=100
 set signcolumn=yes
+
 autocmd CursorHold * silent call CocActionAsync('highlight')
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
