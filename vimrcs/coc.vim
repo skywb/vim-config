@@ -42,6 +42,7 @@ endfunction
 "rename
 nmap <leader>rn <Plug>(coc-rename)
 nmap <C-t> :CocList tasks<CR>
+nmap <leader>c :CocCommand<Cr>
 
 
 ""snippet"
@@ -60,4 +61,9 @@ nmap <C-t> :CocList tasks<CR>
 "" Use <C-j> for both expand and jump (make expand higher priority.)
 "imap <C-j> <Plug>(coc-snippets-expand-jump)
 
+
+call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets')
+
+
+call coc#add_command('echo', 'Doc',  'toggle mundo window') 
 

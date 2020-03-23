@@ -15,10 +15,12 @@
   "suggest.noselect": true,
   "suggest.echodocSupport": true,
   "suggest.enablePreview":true,
+  "coc.preferences.useQuickfixForLocations": true,
   "coc.preferences.hoverTarget": "float",
   "signature.enable":true,
   "snippets.ultisnips.directories": [
   	"UltiSnips",
 	"~/.vim/snippets/vim-snippet/"
-  ]
+  ],
+  "coc.preferences.rootPatterns": [".vim",".git",".hg",".projections.json", ".projcet"]
 }
