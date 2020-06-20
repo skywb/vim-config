@@ -10,17 +10,24 @@ let g:coc_last_hover_message= 1
 "let g:UltiSnipsSnippetDirectories = [ "~/.vim/snippets/vim-snippet"]
 
 "跳转到定义
-nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gd :<C-U>call       CocActionAsync('jumpDefinition')<CR>
+
 "跳转到声明
-nmap <silent> gc <Plug>(coc-declaration)
+"nmap <silent> gc <Plug>(coc-declaration)
+nmap <silent> gc :<C-U>call       CocActionAsync('jumpDeclaration')<CR>
 "跳转到类型定义
-nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gy :<C-U>call       CocActionAsync('jumpReferences')<CR>
 "跳转到实现
-nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gi :<C-U>call       CocActionAsync('jumpImplementation')<CR>
 "跳转到引用
-nmap <silent> gr <Plug>(coc-references)
+"nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gr :<C-U>call       CocActionAsync('jumpReferences')<CR>
 "跳转到下一个错误
-nmap <silent> ge <Plug>(coc-diagnostic-next)
+"nmap <silent> ge <Plug>(coc-diagnostic-next)
+nmap <silent> ge :<C-U>call       CocActionAsync('diagnosticNext',     'error')<CR>
 
 
 
@@ -63,7 +70,5 @@ nmap <leader>c :CocCommand<Cr>
 
 
 call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets')
-
-
 call coc#add_command('echo', 'Doc',  'toggle mundo window') 
 

@@ -160,8 +160,8 @@ Plug 'mileszs/ack.vim'
 "Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'skywind3000/asynctasks.vim'
-Plug 'skywind3000/asyncrun.vim'
+"Plug 'skywind3000/asynctasks.vim'
+"Plug 'skywind3000/asyncrun.vim'
 "Plug 'ludovicchabant/vim-gutentags'
 "Plug 'tpope/vim-fugitive'
 
@@ -175,7 +175,7 @@ source ~/.vim/vimrcs/ack.vim
 source ~/.vim/vimrcs/NerdTree.vim
 source ~/.vim/vimrcs/coc.vim
 source ~/.vim/vimrcs/airline.vim
-source ~/.vim/vimrcs/asynctasks.vim
+"source ~/.vim/vimrcs/asynctasks.vim
 "source ~/.vim/vimrcs/asyncrun.vim
 
 "source ~/.vim/vimrcs/YCM.vim
