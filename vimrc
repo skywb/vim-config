@@ -153,8 +153,8 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 "Plug 'SirVer/ultisnips' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 "Plug 'honza/vim-snippets' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
-Plug 'Shougo/echodoc.vim'
-Plug 'majutsushi/tagbar'
+"Plug 'Shougo/echodoc.vim'
+"Plug 'majutsushi/tagbar'
 "Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 "Plug 'scrooloose/nerdtree'
@@ -172,7 +172,7 @@ call plug#end()
 
 "============插件的配置文件====================================
 source ~/.vim/vimrcs/ack.vim
-source ~/.vim/vimrcs/NerdTree.vim
+"source ~/.vim/vimrcs/NerdTree.vim
 source ~/.vim/vimrcs/coc.vim
 source ~/.vim/vimrcs/airline.vim
 "source ~/.vim/vimrcs/asynctasks.vim
