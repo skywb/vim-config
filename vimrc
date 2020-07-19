@@ -1,7 +1,7 @@
 set nocompatible
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 "设置backspace   允许自动缩进， 允许换行符和连接线上退格， "开始插入的时候允许回退"
 set backspace=start,indent,eol
 "代码补全
@@ -10,6 +10,7 @@ set completeopt=menu,preview,noinsert
 set pumheight=10
 set scrolloff=4   "光标移动到buffer的底部和顶部时保持三行的距离
 set history=1000   "设置命令历史上限
+set fileencodings=utf-8,gbk,unicode
 "set autochdir
 "状态栏设置
 "set laststatus=2
@@ -158,12 +159,14 @@ Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 
 "Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 "Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 "Plug 'skywind3000/asynctasks.vim'
 "Plug 'skywind3000/asyncrun.vim'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 "Plug 'ludovicchabant/vim-gutentags'
 "Plug 'tpope/vim-fugitive'
+"Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 call plug#end()
 
@@ -175,6 +178,7 @@ source ~/.vim/vimrcs/ack.vim
 "source ~/.vim/vimrcs/NerdTree.vim
 source ~/.vim/vimrcs/coc.vim
 source ~/.vim/vimrcs/airline.vim
+source ~/.vim/vimrcs/leaderf.vim
 "source ~/.vim/vimrcs/asynctasks.vim
 "source ~/.vim/vimrcs/asyncrun.vim
 
