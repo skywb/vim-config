@@ -11,6 +11,7 @@ set completeopt=menu,preview,noinsert
 set pumheight=10
 set scrolloff=4   "光标移动到buffer的底部和顶部时保持三行的距离
 set history=1000   "设置命令历史上限
+set fileencodings=utf-8,gbk,unicode
 "set autochdir
 "状态栏设置
 "set laststatus=2
@@ -154,8 +155,8 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 "Plug 'SirVer/ultisnips' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 "Plug 'honza/vim-snippets' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
-Plug 'Shougo/echodoc.vim'
-Plug 'majutsushi/tagbar'
+"Plug 'Shougo/echodoc.vim'
+"Plug 'majutsushi/tagbar'
 "Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 "Plug 'scrooloose/nerdtree'
@@ -163,8 +164,10 @@ Plug 'mileszs/ack.vim'
 "Plug 'vim-airline/vim-airline-themes'
 "Plug 'skywind3000/asynctasks.vim'
 "Plug 'skywind3000/asyncrun.vim'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 "Plug 'ludovicchabant/vim-gutentags'
 "Plug 'tpope/vim-fugitive'
+"Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 call plug#end()
 
@@ -173,9 +176,10 @@ call plug#end()
 
 "============插件的配置文件====================================
 source ~/.vim/vimrcs/ack.vim
-source ~/.vim/vimrcs/NerdTree.vim
+"source ~/.vim/vimrcs/NerdTree.vim
 source ~/.vim/vimrcs/coc.vim
 "source ~/.vim/vimrcs/airline.vim
+source ~/.vim/vimrcs/leaderf.vim
 "source ~/.vim/vimrcs/asynctasks.vim
 "source ~/.vim/vimrcs/asyncrun.vim
 

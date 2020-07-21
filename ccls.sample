@@ -1,0 +1,5 @@
+clang++
+%c %cpp -std=C++14
+%h -x c++-header
+-I.
+-Iinclude
