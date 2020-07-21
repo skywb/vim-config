@@ -2,16 +2,18 @@
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "filetypes": ["c", "cpp", "h", "hpp", "cuda", "objc", "objcpp"],
       "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "initializationOptions": {
          "cache": {
-           "directory": ".ccls-cache"
+           "directory": ".ccls-cache",
+					 "format": "json"
          } ,
-		  "clang.resourceDir": ["/usr/include", "/usr/local/include", "~/clang+llvm-8"]
+				"clang.resourceDir": ["/usr/include", "/usr/local/include", "~/clang+llvm-8"]
        }
     }
   },
+  "cacheFormat": "json",
   "suggest.noselect": true,
   "suggest.echodocSupport": true,
   "suggest.enablePreview":true,
@@ -22,5 +24,5 @@
   	"UltiSnips",
 	"~/.vim/snippets/vim-snippet/"
   ],
-  "coc.preferences.rootPatterns": [".vim",".git",".hg",".projections.json", ".projcet"]
+  "coc.preferences.rootPatterns": [".vim","compile_commands.json", ".git",".hg",".projections.json", ".projcet"]
 }

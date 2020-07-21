@@ -1,7 +1,8 @@
 set nocompatible
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set encoding=utf8
 "设置backspace   允许自动缩进， 允许换行符和连接线上退格， "开始插入的时候允许回退"
 set backspace=start,indent,eol
 "代码补全
@@ -158,8 +159,8 @@ Plug 'majutsushi/tagbar'
 "Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 "Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 "Plug 'skywind3000/asynctasks.vim'
 "Plug 'skywind3000/asyncrun.vim'
 "Plug 'ludovicchabant/vim-gutentags'
@@ -174,7 +175,7 @@ call plug#end()
 source ~/.vim/vimrcs/ack.vim
 source ~/.vim/vimrcs/NerdTree.vim
 source ~/.vim/vimrcs/coc.vim
-source ~/.vim/vimrcs/airline.vim
+"source ~/.vim/vimrcs/airline.vim
 "source ~/.vim/vimrcs/asynctasks.vim
 "source ~/.vim/vimrcs/asyncrun.vim
 
