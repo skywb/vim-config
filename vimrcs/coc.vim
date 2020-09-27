@@ -29,13 +29,11 @@ nmap <silent> gr :<C-U>call       CocActionAsync('jumpReferences')<CR>
 "nmap <silent> ge <Plug>(coc-diagnostic-next)
 nmap <silent> ge :<C-U>call       CocActionAsync('diagnosticNext',     'error')<CR>
 
-
-
-
 "按K显示document in preview window
 "nnoremap <silent> K :call <SID>show_documentation()<CR>
 command Doc call <SID>show_documentation()<CR>
 command Fix call <C-U>call CocActionAsync('doQuickfix')<CR>
+
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -70,5 +68,8 @@ nmap <leader>c :CocCommand<Cr>
 
 
 call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets')
-call coc#add_command('echo', 'Doc',  'toggle mundo window') 
+call coc#add_command('doc', 'Doc',  'echo doc') 
+
+command Format call <C-U>call CocActionAsync('format')<CR>
+call coc#add_command('Format', 'Format',  'format this file code') 
 
