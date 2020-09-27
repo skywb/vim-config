@@ -1,7 +1,10 @@
+set undodir=~/.vim/undo-dir
+set undofile
 set nocompatible
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set expandtab
 set encoding=utf8
 "设置backspace   允许自动缩进， 允许换行符和连接线上退格， "开始插入的时候允许回退"
 set backspace=start,indent,eol
@@ -20,6 +23,7 @@ set fileencodings=utf-8,gbk,unicode
 set showcmd
 set nu
 set rnu "设置相对行号
+
 
 "执行查找前预览第一处匹配
 set incsearch
@@ -197,3 +201,4 @@ set regexpengine=1
 if filereadable("workspace.vim")
 	source workspace.vim
 endif
+
