@@ -24,5 +24,6 @@
   	"UltiSnips",
 	"~/.vim/snippets/vim-snippet/"
   ],
-  "coc.preferences.rootPatterns": [".vim","compile_commands.json", ".git",".hg",".projections.json", ".projcet"]
+  "coc.preferences.rootPatterns": [".vim","compile_commands.json", ".git",".hg",".projections.json", ".projcet"],
+  "json.format.enable": true
 }
