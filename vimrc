@@ -24,7 +24,6 @@ set showcmd
 set nu
 set rnu "设置相对行号
 
-
 "执行查找前预览第一处匹配
 set incsearch
 set hlsearch
@@ -45,9 +44,6 @@ syntax on
 
 "启用鼠标支持
 set mouse=a
-
-"开启折叠
-set fdm=marker
 
 "set tags=./.tags;,.tags
 
@@ -71,7 +67,7 @@ nnoremap gp `[v`]
 
 "====================Netrw设置====================
 let g:netrw_liststyle = 3
-let g:netrw_winsize=20
+let g:netrw_winsize=15
 let g:netrw_list_hide=  netrw_gitignore#Hide().'.*\.ruby-version$'
 
 
@@ -202,3 +198,7 @@ if filereadable("workspace.vim")
 	source workspace.vim
 endif
 
+"按语意折叠
+set foldmethod=syntax
+"设置打开默认不折叠
+set foldlevelstart=99

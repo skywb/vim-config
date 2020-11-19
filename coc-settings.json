@@ -6,8 +6,8 @@
       "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "initializationOptions": {
          "cache": {
-           "directory": ".ccls-cache",
-					 "format": "json"
+           "directory": "/tmp/ccls-cache",
+					 "format": "binary"
          } ,
 				"clang.resourceDir": ["/usr/include", "/usr/local/include", "~/clang+llvm-8"]
        }
