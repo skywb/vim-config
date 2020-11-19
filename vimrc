@@ -150,7 +150,7 @@ endfunc
 "------------Plug config--------------------
 call plug#begin('~/.vim/bundle')
 
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'tag': 'v0.0.78', 'do': './install.sh'}
 "Plug 'Valloric/YouCompleteMe' 
 "Plug 'SirVer/ultisnips' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 "Plug 'honza/vim-snippets' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
