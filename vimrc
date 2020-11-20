@@ -146,7 +146,6 @@ endfunc
 
 
 
-
 "------------Plug config--------------------
 call plug#begin('~/.vim/bundle')
 
@@ -177,7 +176,11 @@ call plug#end()
 "============插件的配置文件====================================
 source ~/.vim/vimrcs/ack.vim
 "source ~/.vim/vimrcs/NerdTree.vim
-source ~/.vim/vimrcs/coc.vim
+
+if filereadable(expand("$HOME/.vim/bundle/coc.nvim/plugin/coc.vim"))
+  source ~/.vim/vimrcs/coc.vim
+endif
+
 "source ~/.vim/vimrcs/airline.vim
 source ~/.vim/vimrcs/leaderf.vim
 "source ~/.vim/vimrcs/asynctasks.vim
