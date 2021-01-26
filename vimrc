@@ -12,7 +12,7 @@ set backspace=start,indent,eol
 "filetype plugin indent on
 set completeopt=menu,preview,noinsert
 set pumheight=10
-set scrolloff=4   "光标移动到buffer的底部和顶部时保持三行的距离
+set scrolloff=4   "光标移动到buffer的底部和顶部时保留四行的距离
 set history=1000   "设置命令历史上限
 set fileencodings=utf-8,gbk,unicode
 "set autochdir
@@ -43,20 +43,11 @@ set cindent
 syntax on
 
 "启用鼠标支持
-set mouse=a
-
-"set tags=./.tags;,.tags
-
-"set cscopetag
-"set cscopeprg='gtags-cscope'
+"set mouse=a
 
 colorscheme molokai
 
 "=================vim函数========================================
-"func! Term()
-"	exec "ter ++row=8"
-"endfunc
-
 command Term :ter ++rows=8
 
 
@@ -75,43 +66,6 @@ let g:netrw_list_hide=  netrw_gitignore#Hide().'.*\.ruby-version$'
 
 "=====================编译运行======================================
 "
-" C, C++ 按F9 编译运行
-map  <F9> : call CompileRunGcc()<CR>
-map! <F9> <ESC>:call CompileRunGcc()<CR>
-
-map <F7> : call Compile()<CR>
-map! <F7> <ESC>:call Compile()<CR>
-
-map <F8> : call Run()<CR>
-map! <F8> <ESC>:call Run()<CR>
-
-func! CompileRunGcc()
-	exec "w"
-	if &filetype == 'c'
-		exec "!g++ % -o %<"
-		exec "! ./%<"
-	elseif &filetype == 'cpp'
-		exec "!g++ -std=c++14 % -o %<"
-		exec "! ./%<"
-	elseif &filetype == 'java'
-		exec "!javac %"
-		exec "!java %<"
-	elseif &filetype == 'sh'
-		:!./%
-	elseif &filetype == 'python'
-		exec "!python3 %"
-	endif
-endfunc
-
-func! Compile()
-	exec "w"
-	exec "make"
-endfunc
-
-func! Run()
-	exec "! ./%<"
-endfunc
-
 command Debug call Debug()
 
 func! Debug()
@@ -130,14 +84,15 @@ else
 	set makeprg=g++\ -o%<\ %    "没有makefile文件就使用g++命令编译当前文件
 endif
 
-map <F3> : call CopyAllToWindows()<CR> 
-map! <F3> <ESC> : call CopyAllToWindows()<CR> 
-vmap <F3> : write !/mnt/c/Windows/System32/clip.exe <CR>
-
-func! CopyAllToWindows()
-	exec "w"
-	exec "!cat % |/mnt/c/Windows/System32/clip.exe"
-endfunc
+" wsl中使用，可以将vim中内容复制到windows的剪贴板
+"map <F3> : call CopyAllToWindows()<CR> 
+"map! <F3> <ESC> : call CopyAllToWindows()<CR> 
+"vmap <F3> : write !/mnt/c/Windows/System32/clip.exe <CR>
+"
+"func! CopyAllToWindows()
+"	exec "w"
+"	exec "!cat % |/mnt/c/Windows/System32/clip.exe"
+"endfunc
 
 "========================编译运行end=====================================
 
@@ -150,13 +105,9 @@ endfunc
 call plug#begin('~/.vim/bundle')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'Valloric/YouCompleteMe' 
-"Plug 'SirVer/ultisnips' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
-"Plug 'honza/vim-snippets' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 "Plug 'Shougo/echodoc.vim'
 "Plug 'majutsushi/tagbar'
-"Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 "Plug 'scrooloose/nerdtree'
 "Plug 'vim-airline/vim-airline'
@@ -164,9 +115,6 @@ Plug 'mileszs/ack.vim'
 "Plug 'skywind3000/asynctasks.vim'
 "Plug 'skywind3000/asyncrun.vim'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-"Plug 'ludovicchabant/vim-gutentags'
-"Plug 'tpope/vim-fugitive'
-"Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 call plug#end()
 
@@ -185,10 +133,6 @@ endif
 source ~/.vim/vimrcs/leaderf.vim
 "source ~/.vim/vimrcs/asynctasks.vim
 "source ~/.vim/vimrcs/asyncrun.vim
-
-"source ~/.vim/vimrcs/YCM.vim
-"source ~/.vim/vimrcs/ultisnips.vim
-"source ~/.vim/vimrcs/gutentags.vim
 "source ~/.vim/vimrcs/Tagbar.vim
 
 
