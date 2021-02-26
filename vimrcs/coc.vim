@@ -30,16 +30,17 @@ nmap <silent> gr :<C-U>call       CocActionAsync('jumpReferences')<CR>
 nmap <silent> ge :<C-U>call       CocActionAsync('diagnosticNext',     'error')<CR>
 
 "按K显示document in preview window
-"nnoremap <silent> K :call <SID>show_documentation()<CR>
-command Doc call <SID>show_documentation()<CR>
-command Fix call <C-U>call CocActionAsync('doQuickfix')<CR>
-
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+command! Doc call <SID>show_documentation()<CR>
+command! Fix call <C-U>call CocActionAsync('doQuickfix')<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
 
@@ -70,6 +71,17 @@ nmap <leader>c :CocCommand<Cr>
 call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets')
 call coc#add_command('doc', 'Doc',  'echo doc') 
 
-command Format call <C-U>call CocActionAsync('format')<CR>
+command! -nargs=0 Format :call CocAction('format')
 call coc#add_command('Format', 'Format',  'format this file code') 
+call coc#add_command('TagFunction', 'LeaderfFunction',  'call LeaderfFunction') 
 
+" 选择模式下，选中整个方法或方法内部所有内容
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+" class obj
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
