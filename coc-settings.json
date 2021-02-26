@@ -13,7 +13,6 @@
        }
     }
   },
-  "cacheFormat": "json",
   "suggest.noselect": true,
   "suggest.echodocSupport": true,
   "suggest.enablePreview":true,
@@ -22,7 +21,7 @@
   "signature.enable":true,
   "snippets.ultisnips.directories": [
   	"UltiSnips",
-	"~/.vim/snippets/vim-snippet/"
+    "~/.vim/snippets/vim-snippet/"
   ],
   "coc.preferences.rootPatterns": [".vim","compile_commands.json", ".git",".hg",".projections.json", ".projcet"],
   "json.format.enable": true
