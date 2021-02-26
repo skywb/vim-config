@@ -45,6 +45,9 @@ syntax on
 "启用鼠标支持
 "set mouse=a
 
+" 设置垂直分割窗口时，分割到下方
+set splitbelow
+
 colorscheme molokai
 
 "=================vim函数========================================
@@ -106,7 +109,6 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
-"Plug 'Shougo/echodoc.vim'
 "Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 "Plug 'scrooloose/nerdtree'
