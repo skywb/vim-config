@@ -49,6 +49,7 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 nmap <C-t> :CocList tasks<CR>
 nmap <leader>c :CocCommand<Cr>
+nmap <leader>l :CocList<Cr>
 
 
 ""snippet"

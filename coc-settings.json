@@ -24,5 +24,9 @@
     "~/.vim/snippets/vim-snippet/"
   ],
   "coc.preferences.rootPatterns": [".vim","compile_commands.json", ".git",".hg",".projections.json", ".projcet"],
-  "json.format.enable": true
+  "json.format.enable": true,
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.errorSign": "x",
+  "diagnostic.infoSign": "i",
+  "diagnostic.hintSign": "H"
 }

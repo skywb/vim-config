@@ -63,8 +63,8 @@ nnoremap gp `[v`]
 let g:netrw_liststyle = 3
 let g:netrw_winsize=15
 let g:netrw_list_hide=  netrw_gitignore#Hide().'.*\.ruby-version$'
-
-
+" 打开文件是在上一个窗口打开  1.用水平拆分窗口打开文件 2.用垂直拆分窗口打开文件 3.用新建标签页打开文件 4.用前一个窗口打开文件
+let g:netrw_browse_split = 4
 
 
 "=====================编译运行======================================
@@ -111,7 +111,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 "Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
-"Plug 'scrooloose/nerdtree'
+"Plug 'honza/vim-snippets'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 "Plug 'skywind3000/asynctasks.vim'
@@ -125,7 +125,6 @@ call plug#end()
 
 "============插件的配置文件====================================
 source ~/.vim/vimrcs/ack.vim
-"source ~/.vim/vimrcs/NerdTree.vim
 
 if filereadable(expand("$HOME/.vim/bundle/coc.nvim/plugin/coc.vim"))
   source ~/.vim/vimrcs/coc.vim
