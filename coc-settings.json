@@ -1,18 +1,4 @@
 {
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "h", "hpp", "cuda", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "initializationOptions": {
-         "cache": {
-           "directory": "/tmp/ccls-cache",
-					 "format": "binary"
-         } ,
-				"clang.resourceDir": ["/usr/include", "/usr/local/include", "~/clang+llvm-8"]
-       }
-    }
-  },
   "suggest.noselect": true,
   "suggest.echodocSupport": true,
   "suggest.enablePreview":true,

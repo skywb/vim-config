@@ -1,3 +1,4 @@
+set t_ut=
 set undodir=~/.vim/undo-dir
 set undofile
 set nocompatible
@@ -111,6 +112,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 "Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
+"Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
