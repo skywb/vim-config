@@ -70,6 +70,8 @@ nmap <leader>l :CocList<Cr>
 
 
 call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets')
+" extera extension
+" call coc#add_extension('@yaegassy/coc-vitest', 'coc-explorer', 'coc-pair')
 call coc#add_command('doc', 'Doc',  'echo doc') 
 
 command! -nargs=0 Format :call CocAction('format')
@@ -86,3 +88,6 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+
+vmap =  <Plug>(coc-format-selected)
+"nmap =  <Plug>(coc-format-selected)
