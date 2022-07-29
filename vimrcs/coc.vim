@@ -92,3 +92,4 @@ omap ac <Plug>(coc-classobj-a)
 vmap =  <Plug>(coc-format-selected)
 "nmap =  <Plug>(coc-format-selected)
 
+nmap <leader>d :CocCommand explorer<CR>
