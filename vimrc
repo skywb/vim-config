@@ -49,7 +49,9 @@ syntax on
 " 设置垂直分割窗口时，分割到下方
 set splitbelow
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme one
+set background=dark
 
 "=================vim函数========================================
 command Term :ter ++rows=8
@@ -68,24 +70,22 @@ let g:netrw_list_hide=  netrw_gitignore#Hide().'.*\.ruby-version$'
 let g:netrw_browse_split = 4
 
 
-"=====================编译运行======================================
+"=====================debug======================================
 "
-command Debug call Debug()
-
-func! Debug()
-	exec "w"
+func! Debug(bin_path)
 	exec "packadd termdebug"
 	exec "let g:termdebug_wide = 163"
-	exec "!g++ -g % -o%<_debug"
-	exec "Termdebug %<_debug"
+	exec "Termdebug "a:bin_path
 endfunc
+
+command -nargs=1 -complete=file Debug call Debug(<f-args>)
 
 
 "设置vim中make命令
 if filereadable("makefile")
 	set makeprg=make    "默认使用make命令
-else 
-	set makeprg=g++\ -o%<\ %    "没有makefile文件就使用g++命令编译当前文件
+elseif filereadable("WORKSPACE")
+	set makeprg=bazel\ build
 endif
 
 " wsl中使用，可以将vim中内容复制到windows的剪贴板
@@ -152,3 +152,9 @@ endif
 set foldmethod=syntax
 "设置打开默认不折叠
 set foldlevelstart=99
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
