@@ -11,7 +11,7 @@ set encoding=utf8
 set backspace=start,indent,eol
 "代码补全
 "filetype plugin indent on
-set completeopt=menu,preview,noinsert
+set completeopt=menu,popup,noselect
 set pumheight=10
 set scrolloff=4   "光标移动到buffer的底部和顶部时保留四行的距离
 set history=1000   "设置命令历史上限
@@ -62,14 +62,6 @@ command Term :ter ++rows=8
 "====================VIM运行设置====================
 nnoremap gp `[v`]
 
-"====================Netrw设置====================
-let g:netrw_liststyle = 3
-let g:netrw_winsize=15
-let g:netrw_list_hide=  netrw_gitignore#Hide().'.*\.ruby-version$'
-" 打开文件是在上一个窗口打开  1.用水平拆分窗口打开文件 2.用垂直拆分窗口打开文件 3.用新建标签页打开文件 4.用前一个窗口打开文件
-let g:netrw_browse_split = 4
-
-
 "=====================debug======================================
 "
 func! Debug(bin_path)
@@ -108,7 +100,7 @@ endif
 "------------Plug config--------------------
 call plug#begin('~/.vim/bundle')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'v0.0.81'}
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 "Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'

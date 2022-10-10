@@ -69,9 +69,9 @@ nmap <leader>l :CocList<Cr>
 "imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 
-call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets')
+"call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets', 'coc-explorer', 'coc-pairs', 'coc-yaml', 'coc-snippets', 'coc-json', 'coc-git')
 " extera extension
-" call coc#add_extension('@yaegassy/coc-vitest', 'coc-explorer', 'coc-pair')
+" call coc#add_extension('@yaegassy/coc-vitest', )
 call coc#add_command('doc', 'Doc',  'echo doc') 
 
 command! -nargs=0 Format :call CocAction('format')

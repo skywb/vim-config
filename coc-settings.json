@@ -1,12 +1,11 @@
 {
   "suggest.noselect": true,
-  "suggest.echodocSupport": true,
-  "suggest.enablePreview":true,
+  "suggest.fixInsertedWord": true,
+  "suggest.removeDuplicateItems": true,
   "coc.preferences.useQuickfixForLocations": true,
-  "coc.preferences.hoverTarget": "float",
   "signature.enable":true,
   "snippets.ultisnips.directories": [
-  	"UltiSnips",
+    "UltiSnips",
     "~/.vim/snippets/vim-snippet/"
   ],
   "coc.preferences.rootPatterns": [".vim","compile_commands.json", ".git",".hg",".projections.json", ".projcet"],
