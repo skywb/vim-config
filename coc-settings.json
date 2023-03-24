@@ -1,18 +1,20 @@
 {
   "suggest.noselect": true,
-  "suggest.echodocSupport": true,
-  "suggest.enablePreview":true,
+  "suggest.fixInsertedWord": true,
+  "suggest.removeDuplicateItems": true,
   "coc.preferences.useQuickfixForLocations": true,
-  "coc.preferences.hoverTarget": "float",
   "signature.enable":true,
   "snippets.ultisnips.directories": [
-  	"UltiSnips",
     "~/.vim/snippets/vim-snippet/"
   ],
-  "coc.preferences.rootPatterns": [".vim","compile_commands.json", ".git",".hg",".projections.json", ".projcet"],
+  "snippets.excludePatterns": [
+    "~/.vim/snippets/vim-snippet/"
+  ],
+  "coc.preferences.rootPatterns": [".vim","compile_commands.json", ".git",".hg", ".projcet", "WORKSPACE"],
   "json.format.enable": true,
   "diagnostic.warningSign": "⚠",
   "diagnostic.errorSign": "x",
   "diagnostic.infoSign": "i",
-  "diagnostic.hintSign": "H"
+  "diagnostic.hintSign": "H",
+  "diagnostic.refreshOnInsertMode": false
 }

@@ -1,7 +1,7 @@
 set t_ut=
 set undodir=~/.vim/undo-dir
 set undofile
-set nocompatible
+" set nocompatible
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -11,9 +11,9 @@ set encoding=utf8
 set backspace=start,indent,eol
 "代码补全
 "filetype plugin indent on
-set completeopt=menu,preview,noinsert
-set pumheight=10
-set scrolloff=4   "光标移动到buffer的底部和顶部时保留四行的距离
+set completeopt=menu,popup,noselect
+set pumheight=15
+set scrolloff=3   "光标移动到buffer的底部和顶部时保留四行的距离
 set history=1000   "设置命令历史上限
 set fileencodings=utf-8,gbk,unicode
 "set autochdir
@@ -44,7 +44,7 @@ set cindent
 syntax on
 
 "启用鼠标支持
-"set mouse=a
+set mouse=a
 
 " 设置垂直分割窗口时，分割到下方
 set splitbelow
@@ -53,25 +53,18 @@ set splitbelow
 colorscheme one
 set background=dark
 
+" 设置命令行补全模式
+set wildmode=longest,list,full
+
 "=================vim函数========================================
 command Term :ter ++rows=8
-
-
 
 
 "====================VIM运行设置====================
 nnoremap gp `[v`]
 
-"====================Netrw设置====================
-let g:netrw_liststyle = 3
-let g:netrw_winsize=15
-let g:netrw_list_hide=  netrw_gitignore#Hide().'.*\.ruby-version$'
-" 打开文件是在上一个窗口打开  1.用水平拆分窗口打开文件 2.用垂直拆分窗口打开文件 3.用新建标签页打开文件 4.用前一个窗口打开文件
-let g:netrw_browse_split = 4
-
-
 "=====================debug======================================
-"
+
 func! Debug(bin_path)
 	exec "packadd termdebug"
 	exec "let g:termdebug_wide = 163"
@@ -85,7 +78,7 @@ command -nargs=1 -complete=file Debug call Debug(<f-args>)
 if filereadable("makefile")
 	set makeprg=make    "默认使用make命令
 elseif filereadable("WORKSPACE")
-	set makeprg=bazel\ build
+	set makeprg=bazel\ build\ ...
 endif
 
 " wsl中使用，可以将vim中内容复制到windows的剪贴板
@@ -104,11 +97,10 @@ endif
 
 
 
-
 "------------Plug config--------------------
 call plug#begin('~/.vim/bundle')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'tag': 'v0.0.80'}
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 "Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
@@ -119,6 +111,10 @@ Plug 'mileszs/ack.vim'
 "Plug 'skywind3000/asynctasks.vim'
 "Plug 'skywind3000/asyncrun.vim'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'puremourning/vimspector'
+
+"Plug 'lakshayg/vim-bazel'
+
 
 call plug#end()
 
@@ -137,6 +133,7 @@ source ~/.vim/vimrcs/leaderf.vim
 "source ~/.vim/vimrcs/asynctasks.vim
 "source ~/.vim/vimrcs/asyncrun.vim
 "source ~/.vim/vimrcs/Tagbar.vim
+source ~/.vim/vimrcs/bazel.vim
 
 
 "==============================================
@@ -153,8 +150,33 @@ set foldmethod=syntax
 "设置打开默认不折叠
 set foldlevelstart=99
 
+" 设置全彩色支持
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
+function Copy()
+  let c = join(v:event.regcontents,"\n")
+  let c64 = system("base64", c)
+  let s = "\e]52;c;" . trim(c64) . "\x07"
+  call s:raw_echo(s)
+endfunction
+
+function! s:raw_echo(str)
+  if has('win32') && has('nvim')
+    call chansend(v:stderr, a:str)
+  else
+    if filewritable('/dev/fd/2')
+      call writefile([a:str], '/dev/fd/2', 'b')
+    else
+      exec("silent! !echo " . shellescape(a:str))
+      redraw!
+    endif
+  endif
+endfunction
+
+autocmd TextYankPost * call Copy()
