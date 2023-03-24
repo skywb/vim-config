@@ -4,9 +4,6 @@
   "suggest.removeDuplicateItems": true,
   "coc.preferences.useQuickfixForLocations": true,
   "signature.enable":true,
-  "snippets.ultisnips.directories": [
-    "~/.vim/snippets/vim-snippet/"
-  ],
   "snippets.excludePatterns": [
     "~/.vim/snippets/vim-snippet/"
   ],
