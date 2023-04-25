@@ -133,7 +133,6 @@ source ~/.vim/vimrcs/leaderf.vim
 "source ~/.vim/vimrcs/asynctasks.vim
 "source ~/.vim/vimrcs/asyncrun.vim
 "source ~/.vim/vimrcs/Tagbar.vim
-source ~/.vim/vimrcs/bazel.vim
 
 
 "==============================================
