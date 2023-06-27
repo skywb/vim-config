@@ -1,17 +1,27 @@
 {
   "suggest.noselect": true,
-  "suggest.fixInsertedWord": true,
   "suggest.removeDuplicateItems": true,
   "coc.preferences.useQuickfixForLocations": true,
   "signature.enable":true,
   "snippets.excludePatterns": [
     "~/.vim/snippets/vim-snippet/"
   ],
-  "coc.preferences.rootPatterns": [".vim","compile_commands.json", ".git",".hg", ".projcet", "WORKSPACE"],
+  "snippets.ultisnips.directories": [
+    "~/.vim/snippets/vim-snippet/"
+  ],
+  "workspace.rootPatterns": [".vim","compile_commands.json", ".git",".hg", ".projcet", "WORKSPACE"],
   "json.format.enable": true,
   "diagnostic.warningSign": "⚠",
   "diagnostic.errorSign": "x",
   "diagnostic.infoSign": "i",
   "diagnostic.hintSign": "H",
-  "diagnostic.refreshOnInsertMode": false
+  "diagnostic.refreshOnInsertMode": false,
+  "inlayHint.enable": false,
+  "colors.enable": true,
+  "translator.engines": [
+    "google",
+    "youdao"
+  ],
+  "coc.preferences.maxFileSize": "1000MB",
+  "config_end":""
 }

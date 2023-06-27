@@ -3,7 +3,7 @@ set hidden
 set updatetime=300
 set signcolumn=number
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
 let g:coc_last_hover_message= 1
@@ -51,25 +51,7 @@ nmap <C-t> :CocList tasks<CR>
 nmap <leader>c :CocCommand<Cr>
 nmap <leader>l :CocList<Cr>
 
-
-""snippet"
-"" Use <C-y> for trigger snippet expand.
-"imap <C-y> <Plug>(coc-snippets-expand)
-"
-"" Use <C-j> for select text for visual placeholder of snippet.
-"vmap <C-j> <Plug>(coc-snippets-select)
-"
-"" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-"let g:coc_snippet_next = '<c-j>'
-"
-"" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-"let g:coc_snippet_prev = '<c-k>'
-"
-"" Use <C-j> for both expand and jump (make expand higher priority.)
-"imap <C-j> <Plug>(coc-snippets-expand-jump)
-
-
-"call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets', 'coc-explorer', 'coc-pairs', 'coc-yaml', 'coc-snippets', 'coc-json', 'coc-git')
+call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets', 'coc-explorer', 'coc-pairs', 'coc-yaml', 'coc-snippets', 'coc-json', 'coc-git')
 " extera extension
 " call coc#add_extension('@yaegassy/coc-vitest', )
 call coc#add_command('doc', 'Doc',  'echo doc') 
@@ -91,7 +73,6 @@ omap ac <Plug>(coc-classobj-a)
 
 vmap =  <Plug>(coc-format-selected)
 "nmap =  <Plug>(coc-format-selected)
-
 nmap <leader>d :CocCommand explorer<CR>
 
 
@@ -111,9 +92,7 @@ call coc#add_command('VimspectorPause', 'call vimspector#Pause()', 'Pause debugg
 call coc#add_command('VimspectorBreakpoints', 'call vimspector#ListBreakpoints()', 'Show/hide the breakpoints window')
 call coc#add_command('VimspectorToggleBreakpoint', 'call vimspector#ToggleBreakpoint()', 'Toggle line breakpoint on the current line.')
 call coc#add_command('VimspectorToggleConditionalBreakpoint', 'call vimspector#ToggleBreakpoint( { trigger expr,  hit count expr } )', 'Toggle conditional line breakpoint or logpoint on the current line.')
-
-call coc#add_command('VimspectorAddFunctionBreakpoint', 'call vimspector#AddFunctionBreakpoint("<cexpr>")', 'Add a function breakpoint for the expression under cursor')
-
+"call coc#add_command('VimspectorAddFunctionBreakpoint', 'call vimspector#AddFunctionBreakpoint("<cexpr>")', 'Add a function breakpoint for the expression under cursor')
 call coc#add_command('VimspectorGoToCurrentLine', 'call vimspector#GoToCurrentLine()', 'Reset the current program counter to the current line')
 call coc#add_command('VimspectorRunToCursor', 'call vimspector#RunToCursor()', 'Run to Cursor')
 call coc#add_command('VimspectorStepOver', 'call vimspector#StepOver()', 'Step Over')
@@ -125,3 +104,10 @@ call coc#add_command('VimspectorDownFrame', 'call vimspector#DownFrame()', 'Move
 call coc#add_command('VimspectorJumpToNextBreakpoint', 'call vimspector#JumpToNextBreakpoint()', 'Move Cursor to the next breakpoint in current file')
 call coc#add_command('VimspectorJumpToPreviousBreakpoint', 'call vimspector#JumpToPreviousBreakpoint()', 'Move Cursor to the previous breakpoint in current file')
 call coc#add_command('VimspectorJumpToProgramCounter', 'call vimspector#JumpToProgramCounter()', 'Move Cursor to the program counter in the current frame')
+
+" for coc-translator
+nmap <Leader>t <Plug>(coc-translator-p)
+vmap <Leader>t <Plug>(coc-translator-pv)
+" echo
+nmap <Leader>e <Plug>(coc-translator-e)
+vmap <Leader>e <Plug>(coc-translator-ev)

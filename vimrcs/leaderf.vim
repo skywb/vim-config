@@ -10,3 +10,5 @@ let g:Lf_WildIgnore = {
 let g:Lf_RootMarkers = ['.git', '.hg', '.svn', '.ccls', '.workspace', '.project']
 let g:Lf_UseCache = 1
 let g:Lf_RecurseSubmodules = 1
+" let g:Lf_DefaultExternalTool = "rg"
+let g:Lf_RecurseSubmodules = 1

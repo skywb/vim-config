@@ -56,6 +56,11 @@ set background=dark
 " 设置命令行补全模式
 set wildmode=longest,list,full
 
+" 设置文件浏览器宽度
+let g:netrw_winsize = 20
+let g:netrw_altv = 1
+let g:netrw_liststyle = 3
+
 "=================vim函数========================================
 command Term :ter ++rows=8
 
@@ -100,10 +105,11 @@ endif
 "------------Plug config--------------------
 call plug#begin('~/.vim/bundle')
 
-Plug 'neoclide/coc.nvim', {'tag': 'v0.0.80'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
 "Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
+Plug 'alepez/vim-gtest'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 "Plug 'vim-airline/vim-airline'
