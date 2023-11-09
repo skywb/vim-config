@@ -51,6 +51,8 @@ nmap <C-t> :CocList tasks<CR>
 nmap <leader>c :CocCommand<Cr>
 nmap <leader>l :CocList<Cr>
 
+nmap <leader>ol :CocList outline<Cr>
+
 call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets', 'coc-explorer', 'coc-pairs', 'coc-yaml', 'coc-snippets', 'coc-json', 'coc-git')
 " extera extension
 " call coc#add_extension('@yaegassy/coc-vitest', )
@@ -104,6 +106,7 @@ call coc#add_command('VimspectorDownFrame', 'call vimspector#DownFrame()', 'Move
 call coc#add_command('VimspectorJumpToNextBreakpoint', 'call vimspector#JumpToNextBreakpoint()', 'Move Cursor to the next breakpoint in current file')
 call coc#add_command('VimspectorJumpToPreviousBreakpoint', 'call vimspector#JumpToPreviousBreakpoint()', 'Move Cursor to the previous breakpoint in current file')
 call coc#add_command('VimspectorJumpToProgramCounter', 'call vimspector#JumpToProgramCounter()', 'Move Cursor to the program counter in the current frame')
+call coc#add_command('AddBreakpoint', 'call vimspector#ToggleBreakpoint()', 'Add break point')
 
 " for coc-translator
 nmap <Leader>t <Plug>(coc-translator-p)

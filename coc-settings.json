@@ -23,5 +23,11 @@
     "youdao"
   ],
   "coc.preferences.maxFileSize": "1000MB",
-  "config_end":""
+  "workspace.ignoredFolders": [
+    "external/**",
+    "bazel-bin/**",
+    "bazel-*/**"
+  ],
+  "snippets.ultisnips.pythonPrompt": false,
+  "config_end":"end"
 }
