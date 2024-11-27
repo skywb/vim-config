@@ -136,6 +136,10 @@ if filereadable(expand("$HOME/.vim/bundle/coc.nvim/plugin/coc.vim"))
   source ~/.vim/vimrcs/coc.vim
 endif
 
+if filereadable(expand("$HOME/.vim/pack/gongfeng/start/vim/autoload/copilot.vim"))
+  imap <C-l> <C-S-down>
+endif
+
 "source ~/.vim/vimrcs/airline.vim
 source ~/.vim/vimrcs/leaderf.vim
 "source ~/.vim/vimrcs/asynctasks.vim
