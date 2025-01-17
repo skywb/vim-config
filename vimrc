@@ -15,7 +15,8 @@ set completeopt=menu,popup,noselect
 set pumheight=15
 set scrolloff=3   "光标移动到buffer的底部和顶部时保留四行的距离
 set history=1000   "设置命令历史上限
-set fileencodings=utf-8,gbk,unicode
+" set fileencodings=utf-8,gbk,unicode,utf-16le,default,ucs-bom,latin1,gb2312,cp936,gb18030
+set fileencodings=utf-8,gbk,ucs-bom,utf-16le,default,latin1,gb2312,cp936,gbk,gb18030
 "set autochdir
 "状态栏设置
 "set laststatus=2
@@ -24,6 +25,8 @@ set fileencodings=utf-8,gbk,unicode
 set showcmd
 set nu
 set rnu "设置相对行号
+set maxmempattern=200000
+set redrawtime=20000
 
 "执行查找前预览第一处匹配
 set incsearch
@@ -135,6 +138,12 @@ source ~/.vim/vimrcs/ack.vim
 if filereadable(expand("$HOME/.vim/bundle/coc.nvim/plugin/coc.vim"))
   source ~/.vim/vimrcs/coc.vim
 endif
+
+
+if filereadable(expand("$HOME/.vim/pack/gongfeng/start/vim/autoload/copilot.vim"))
+  imap <C-l> <C-S-down>
+endif
+
 
 "source ~/.vim/vimrcs/airline.vim
 source ~/.vim/vimrcs/leaderf.vim
