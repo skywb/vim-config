@@ -108,17 +108,11 @@ endif
 "------------Plug config--------------------
 call plug#begin('~/.vim/bundle')
 
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 Plug 'octol/vim-cpp-enhanced-highlight' ", { 'for' : ['c', 'cpp', 'vim', 'hpp', 'h'] }
-"Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
-Plug 'alepez/vim-gtest'
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
-"Plug 'skywind3000/asynctasks.vim'
-"Plug 'skywind3000/asyncrun.vim'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'puremourning/vimspector'
 Plug 'junegunn/vim-easy-align'
@@ -230,15 +224,16 @@ function! s:raw_echo(str)
 endfunction
 
 autocmd TextYankPost * call Copy()
-
-set fillchars+=vert:│   " 改为竖线符号（Unicode U+2502）
-highlight VertSplit ctermfg=DarkGray ctermbg=NONE guifg=#666666 guibg=NONE
-" set fillchars+=horiz:─    " 水平分割线改为横线（Unicode U+2500）
+" set fillchars+=vert:│   " 改为竖线符号（Unicode U+2502）
+set fillchars=vert:│,fold:-,eob:~    " 水平分割线改为横线（Unicode U+2500）
+set statusline=%#StatusLine#%{repeat('─',winwidth(0))}
+set laststatus=0
 " 分割线配色（适配终端和 GUI）
 if has('gui_running')
   highlight VertSplit guifg=#555555 guibg=NONE gui=NONE
 else
-  highlight VertSplit ctermfg=242 ctermbg=NONE cterm=NONE
+  highlight VertSplit ctermfg=DarkGray ctermbg=NONE guifg=#666666 guibg=NONE
+  highlight StatusLine ctermbg=DarkGray ctermfg=NONE guifg=#666666 guibg=NONE   
 endif
 
 " ~/.vimrc 配置
