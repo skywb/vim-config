@@ -53,7 +53,8 @@ nmap <leader>l :CocList<Cr>
 
 nmap <leader>ol :CocList outline<Cr>
 
-call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets', 'coc-explorer', 'coc-pairs', 'coc-yaml', 'coc-snippets', 'coc-json', 'coc-git')
+" call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets', 'coc-explorer', 'coc-pairs', 'coc-yaml', 'coc-snippets', 'coc-json', 'coc-git')
+call coc#add_extension('coc-json', 'coc-tasks', 'coc-snippets', 'coc-explorer', 'coc-yaml', 'coc-snippets', 'coc-json', 'coc-git')
 " extera extension
 " call coc#add_extension('@yaegassy/coc-vitest', )
 call coc#add_command('doc', 'Doc',  'echo doc') 

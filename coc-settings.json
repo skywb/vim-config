@@ -31,5 +31,6 @@
   "snippets.ultisnips.pythonPrompt": false,
   "suggest.languageSourcePriority": -1,
   "outline.detailAsDescription": false,
-  "config_end":"end"
+  "config_end": "end",
+  "git.enableGutters": false
 }

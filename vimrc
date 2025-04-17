@@ -49,6 +49,8 @@ set mouse=a
 " 设置垂直分割窗口时，分割到下方
 set splitbelow
 
+
+
 " colorscheme molokai
 colorscheme one
 set background=dark
@@ -98,9 +100,6 @@ endif
 "endfunc
 
 "========================编译运行end=====================================
-
-
-
 
 
 "------------Plug config--------------------
@@ -228,3 +227,31 @@ function! s:raw_echo(str)
 endfunction
 
 autocmd TextYankPost * call Copy()
+
+set fillchars+=vert:│   " 改为竖线符号（Unicode U+2502）
+highlight VertSplit ctermfg=DarkGray ctermbg=NONE guifg=#666666 guibg=NONE
+" set fillchars+=horiz:─    " 水平分割线改为横线（Unicode U+2500）
+" 分割线配色（适配终端和 GUI）
+if has('gui_running')
+  highlight VertSplit guifg=#555555 guibg=NONE gui=NONE
+else
+  highlight VertSplit ctermfg=242 ctermbg=NONE cterm=NONE
+endif
+
+" ~/.vimrc 配置
+augroup DynamicLineNumber
+  autocmd!
+  " 进入窗口时显示行号
+  autocmd WinEnter * setlocal rnu
+  " 离开窗口时隐藏行号
+  autocmd WinLeave * setlocal nornu
+augroup END
+
+" 活动窗口显示绝对行号，非活动窗口隐藏行号
+augroup ActiveWindowLineNumber
+  autocmd!
+  autocmd WinEnter * setlocal number relativenumber!
+  autocmd WinLeave * setlocal nonumber norelativenumber
+augroup END
+
+
