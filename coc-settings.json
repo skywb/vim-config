@@ -9,7 +9,7 @@
   "snippets.ultisnips.directories": [
     "~/.vim/snippets/vim-snippet/"
   ],
-  "workspace.rootPatterns": [".vim","compile_commands.json", ".git",".hg", ".projcet", "WORKSPACE"],
+  "workspace.rootPatterns": [".git", ".vim","compile_commands.json", ".hg", ".projcet", "WORKSPACE"],
   "json.format.enable": true,
   "diagnostic.warningSign": "⚠",
   "diagnostic.errorSign": "x",
